@@ -1,0 +1,135 @@
+petla = 1
+while (petla < 2):
+    print ("spis tresci wybierz 100.")
+    temat = int(input("wybierz temat: "))
+    if (temat == 100):
+        print("0 program podstawowy")
+        print("1 Program do przeliczania stopni Celsjusza na Fahrenheita")
+        print("2 Program do przeliczania stopni Fahrenheita na Celsjusza")
+        print("3 Program do obliczania pola powierzchni kola o zadanym promieniu")
+        print("4 Program ktory poda pierwsza i ostatnia cyfre podanej liczby")
+        print("5 Program ktory rysuje prostokat o zadanych rozmiarach")
+        print("6 Program do przeliczania liczby zapisanej w formacie binarnym na system dziesietny")
+        print("7 Program do rozpoznawania czy podane liczba jest parzysta czy nie.")
+        print("8 Program do sprawdzania czy liczba jest podzielna przez 3 lub 5 lub 7")
+        print("9 Pogram do sprawdzania czy liczba jest podzielne przez 3 i 5 i 7")
+        print("10 Program do sprawdzania czy podany rok jest rokiem przestepnym")
+        print ()
+    elif (temat == 0):
+        print ("hello world")
+        print ()
+    elif (temat == 1):
+        ccel = int(input("wpisz temperature w C: "))
+        cfar = ccel * 9 / 5 + 32
+        print (ccel, "stopni C to ", cfar, "stopni F.")
+        print ()
+    elif (temat == 2):
+        ffar = int(input("wpisz temperature w F: "))
+        fcel = ffar - 32
+        fcel = fcel * 5 / 9
+        print (ffar, "stopni F to ", fcel, "stopni C.")
+        print ()
+    elif (temat == 3):
+        promien = float(input("podaj promien kola: "))
+        pi = float(3.141692)
+        pole = pi * promien
+        print ("pole kola o promieniu ", promien, "wynosi", pole)
+        print ()
+    elif (temat == 4):
+        liczba = input("wpisz liczbe: ")
+        txtliczba = str(liczba)
+        print("pierwsza cyfra to: ", txtliczba[0], "ostatnia cyfra to: ", txtliczba[-1])
+        print()
+    elif (temat == 5):
+        print("wysokość i szerokość muszą być liczbami naturalnymi!")
+        h = int(input("Podaj wysokość prostokąta: "))
+        a = int(input("Podaj szerokość prostokąta: "))
+        # rysowanie dachu
+        print("|", end='')
+        p1 = a - 2
+        while p1 > 0:
+            print("-", end='')
+            p1 = p1 - 1
+        print("|")
+        # rysowanie boków
+        p2 = h - 2
+        while p2 > 0:
+            print("|", end='')
+            p1 = a - 2
+            while p1 > 0:
+                print(" ", end='')
+                p1 = p1 - 1
+            print("|")
+            p2 = p2 - 1
+        # rysowanie podłogi
+        print("|", end='')
+        p1 = a - 2
+        while p1 > 0:
+            print("-", end='')
+            p1 = p1 - 1
+        print("|")
+    elif (temat == 6):
+        # BIN - DEC
+        binorg = str(input("wpisz liczbe binarna: "))
+        bit = len (binorg)
+        #sprawdzanie, czy jest cos innego, niz 1 i 0
+        cyf = 0
+        blad = 0
+        while (cyf < bit):
+            if (blad != 0):
+                cyf = bit
+                print ("Binarna to tylko zera i jedynki!")
+                print ()
+            else:
+                if (binorg [cyf] in {"0", "1"}):
+                    cyf = cyf +1
+                else:
+                    blad = 1
+        if (blad == 0):
+            binlew = binorg[::-1]
+            cyf = 0
+            sumadec = 0
+            while (cyf < bit):
+                biezznak = int (binlew [cyf])
+                biezdec = 2 ** cyf * biezznak
+                sumadec = sumadec + biezdec
+                cyf = cyf +1
+            print (binorg, "w systemie binarnym to ", sumadec, "w sytemie dziesietnym.")
+        print ()
+    elif (temat == 7):
+        licz = float(input("wpisz liczbe: "))
+        if (licz%2 == 0):
+            print ("liczba ",licz, " jest parzysta")
+        else:
+            print ("liczba ",licz, " nie jest parzysta")
+        print()
+    elif (temat == 8):
+        licz = float(input ("wpisz liczbe: "))
+        retrzy = licz % 3
+        repiec = licz % 5
+        resiedem = licz % 7
+        if (retrzy * repiec * resiedem == 0):
+            print ("liczba ",licz,"jest podzielna przez 3 lub 5 lub 7")
+        else:
+            print ("liczba ",licz," nie jest podzielna przez 3 lub 5 lub 7")
+        print ()
+    elif (temat == 9):
+        licz = float(input ("wpisz liczbe: "))
+        retrzy = licz % 3
+        repiec = licz % 5
+        resiedem = licz % 7
+        if (retrzy + repiec + resiedem != 0):
+            print ("liczba ",licz," nie jest podzielna przez 3 i 5 i 7")
+        else:
+            print ("liczba ",licz," jest podzielna przez 3 i 5 i 7")
+        print ()
+    elif (temat == 10):
+        rok = int(input("Podaj rok: "))
+        if (rok % 4 == 0):
+            print ("Rok ", rok, "jest przestepny.")
+        else:
+            print ("Rok ", rok, "nie jest przestepny.")
+        print()
+    else:
+        print ("Wpisz prawidlowy temat")
+        print ()

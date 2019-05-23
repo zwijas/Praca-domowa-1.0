@@ -11,8 +11,14 @@
 #wyr2 = input("wprowadź wyraz 2: ")
 #wyr3 = input("wprowadź wyraz 3: ")
 
-print("wprowadź wyraz ", nrwyr, " lub wpisz koniec" ,)
-wyr0= input()
+ilosc =0
+print("wprowadź wyraz ", ilosc +1, " lub wpisz koniec")
+wpis=input()
+while wpis != "koniec"
+    lista[ilosc] = wpis
+    ilosc=ilosc + 1
+
+
 
 
 lista = ["3aa", "5aaaa", "7aaaaaa"]

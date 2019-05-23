@@ -11,6 +11,10 @@
 #wyr2 = input("wprowadź wyraz 2: ")
 #wyr3 = input("wprowadź wyraz 3: ")
 
+print("wprowadź wyraz ", nrwyr, " lub wpisz koniec" ,)
+wyr0= input()
+
+
 lista = ["3aa", "5aaaa", "7aaaaaa"]
 szer0 = len(lista[0])
 szer1 = len(lista[1])

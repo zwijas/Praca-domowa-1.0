@@ -7,20 +7,22 @@
 #Maksymalna szerokość kolumny, np. 30znaków, jeśli tekst będzie za długi niech zawartość przycina się i kończy trzema kropkami.
 #A jeszcze większym atutem będzie, gdy będzie można podać listę zagnieżdżoną i narysuje się tabela z odpowiednią ilością wierszy i kolumn :)
 
-Print ("Wybierz 1 aby zdefiniować listę lub cokolwiek innego, aby skorzystać z listy w programie")
+print ("Wybierz 1 aby zdefiniować listę lub cokolwiek innego, aby skorzystać z listy w programie")
 wybor = input()
-if input = 1
-    global ilosc = 0
+if wybor == 1:
+    global ilosc
     lista = []
     print("wprowadź wyraz ", ilosc +1, " lub wpisz koniec")
-    wpis=input()
+    wpis = input()
     koniec = ("koniec")
+    ilosc = ilosc + 1
     while wpis != koniec:
         lista.append(wpis)
-        global ilosc = ilosc + 1
+        global ilosc
+        ilosc = ilosc + 1
         print("wprowadź wyraz ", ilosc + 1, " lub wpisz koniec")
         wpis = input()
-else 
+else:
     lista = ["3aa", "5aaaa", "8aaaaaaa"]
     ilosc = 2
 
@@ -30,7 +32,8 @@ while rekord < ilosc:
     dl = len(lista[rekord])
     while dl != 0:
         print("_",end='')
-        global dl = dl-1
+        global dl
+        dl = dl-1
 print("+")
 
 """    

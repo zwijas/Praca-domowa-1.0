@@ -1,0 +1,62 @@
+"""1) Stwórz program który przyjmie w parametrze dowolną listę np
+['col1', 'col2', 'col3'] i wyświetli:
+    +------+------+------+
+    | col1 | col2 | col3 |
+    +------+------+------+
+    Dodatkowym atutem będzie gdy szerokość kolumn będzie zawsze
+równa bez względów na zawartość, tekst wyrównany do lewej.
+    Maksymalna szerokość kolumny np 30znaków jesli tekst będzie za
+długi niech zawartość przycina się i kończy trzema kropkami
+    Maksymalna szerokość kolumny np 30znaków jesli tekst będzie za
+długi niech zawartość przycina się i kończy trzema kropkami.
+    A jeszcze większym atutem będzie gdy będzie można podać liste
+zagnieżdżoną i narysuje się tabela z odpowiednią ilością wierszy
+i kolumn :)"""
+print ("Wybierz 1 aby zdefiniować listę lub cokolwiek innego, aby skorzystać z listy w programie")
+wybor = input()
+if wybor in (1, str(1)):
+    lista = []
+    ilosc = 0
+    print("wprowadź wyraz ", ilosc +1, " lub wpisz koniec")
+    wpis = input()
+    koniec = ("koniec")
+    ilosc = ilosc + 1
+    while wpis != koniec:
+        #nie wiem dlaczego nie działa global...
+        lista.append(wpis)
+        print("wprowadź wyraz ", ilosc + 1, " lub wpisz koniec")
+        wpis = input()
+        ilosc = ilosc + 1
+else:
+    lista = ["aa3", "aaaa5", "aaaaaaa8","asssssss10ssaaaaaa20aaaaa27a30rrrrrrrr40"]
+ilosc = len (lista) - 1
+a=0
+while a<=2:
+    if a in (0, 2):
+        # sufit i podłoga
+        rekord = 0
+        while rekord <= ilosc:
+            print ("+", end='')
+            dl = len(lista[rekord])
+            if dl > 29:
+                dl = 30
+            rekord = rekord + 1
+            while dl != 0:
+                print("-", end='')
+                dl = dl-1
+        print("+")
+    else:
+        #rząd nazw
+        rekord = 0
+        print ("|",end = '')
+        while rekord <= ilosc:
+            dl = len(lista[rekord])
+            if dl > 29:
+                print(lista[rekord][0:27],end = '')
+                print("...", end='')
+            else:
+                print(lista[rekord], end = '')
+            print("|", end = '')
+            rekord = rekord + 1
+        print()
+    a = a+1

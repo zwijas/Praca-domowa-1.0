@@ -1,0 +1,13 @@
+#Program przyjmuje kwotę w parametrze i wylicza jak rozmienić to na monety: 5, 2, 1, 0.5, 0.2, 0.1 wydając ich jak najmniej.
+kwota = float(input("podaj kwotę do rozmienienia na monety: "))
+monety = [500, 200, 100, 50, 20, 10]
+a = 0
+reszta = kwota*100
+print("kwotę",kwota, "należy rozmienić na:")
+while a <= len(monety)-1:
+    wynik = (reszta - reszta % monety[a])/monety[a]
+    print(int(wynik), "monet o nominale", float(monety[a]/100))
+    reszta = reszta % monety[a]
+    a = a + 1
+    if a == len(monety):
+        print("do rozmienienia poostanie:", reszta/100)

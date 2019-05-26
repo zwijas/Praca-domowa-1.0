@@ -1,0 +1,18 @@
+"""4) Kalkulator do wyliczania wieku psa.
+Przez pierwsze dwa lata, każdy psi rok to 10,5 ludzkiego roku, przez, reszte lat psi rok to 4 ludzkie lata
+  Np: 15 ludzkich lat to 73 psie lata"""
+a = 0
+while a < 1:
+    print ("wpisz ile lat ma twój pies")
+    wp = float(input())
+    if wp < 0:
+        print ("twój pies jeszcze się nie urodził, nie martw się o jego wiek.")
+    elif wp <2:
+        lwp = wp * 10.5
+        print("Psa w wieku", wp, " lat można porównać do człowieka w wieku ", lwp, "lat.")
+    else:
+        lwp = (wp - 2) * 4 + 21
+        print("Psa w wieku", wp, " lat można porównać do człowieka w wieku ", lwp, "lat.")
+        if lwp > 110:
+            print("Twój pies jest martwy :(")
+    print ()

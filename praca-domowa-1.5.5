@@ -1,0 +1,33 @@
+"""5) Napisz program który poda statystki dowolnego tekstu, wypisze takie
+dane jak: ilość użyć poszczególnych literek i cyfr, ilość wyrazów.
+Program przy analizie tekstu niech będzie case-insensitive"""
+print ("wpisz tekst do analizy lub wpisz >>zdef<< dla analizy tekstu zdefiniowanego")
+analiza = input()
+if analiza == "zdef":
+    analiza = "Tekst zdefiniowany"
+analiza = analiza.upper() #zmiana wszystkich liter na wielkie - case-insensitive
+print ("Analizowany tekst:")
+print (analiza) #głównie po to, żeby wyświetlić zdefiniowany tekst
+dlugosc = len(analiza)
+if dlugosc == 1:
+    print ("Twój tekst składa się z 1 znaku")
+else:
+    print ("Twój tekst składa się z ", dlugosc, " znaków")
+a = 0
+litery = []
+while a < dlugosc:
+    litery.append(analiza[a])
+    a = a + 1 #dodanie pijedyńczych znaków tekstu do listy litery
+litery.sort()
+alf = ''.join(litery) #posortowanie alfabetycznie i połączenie w tekst
+print ("Znaki składające się na twój tekst w porządku alfabetycznym to:")
+print (alf)
+a = 0
+b = 0
+while a <= dlugosc-1:
+    print("Znak [", end = "")
+    print (alf[a],end = '')
+    print ("] występuje w tekście ", end = '')
+    b = alf.count(alf[a])
+    print (b, " razy")
+    a = a + b

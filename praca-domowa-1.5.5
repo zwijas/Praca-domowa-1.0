@@ -1,42 +1,47 @@
 """5) Napisz program który poda statystki dowolnego tekstu, wypisze takie
 dane jak: ilość użyć poszczególnych literek i cyfr, ilość wyrazów.
 Program przy analizie tekstu niech będzie case-insensitive"""
-print ("wpisz tekst do analizy lub wpisz >>zdef<< dla analizy tekstu zdefiniowanego")
-analiza = input()
-if analiza == "zdef":
-    analiza = "Tekst zdefiniowany4slowa,sprawdza"
-analiza = analiza.upper() #zmiana wszystkich liter na wielkie - case-insensitive
-print ("Analizowany tekst:")
-print (analiza) #głównie po to, żeby wyświetlić zdefiniowany tekst
-dlugosc = len(analiza)
-if dlugosc == 1:
-    print ("Twój tekst składa się z 1 znaku")
-else:
-    print ("Twój tekst składa się z ", dlugosc, " znaków")
-a = 0
-litery = []
-while a < dlugosc:
-    litery.append(analiza[a])
-    a = a + 1 #dodanie pijedyńczych znaków tekstu do listy litery
-alf = ["a", "ą", "b", "c", "ć", "d", "e", "ę", "f", "g", "h", "i", "j", "k", "l", "ł", "m", "n", "ń", "o", "ó", "p", "q", "r", "s", "ś", "t", "u", "v", "w", "x", "y", "z", "ź", "ż"]
-a = 0
-ilslow = 0
-while a < dlugosc:
-    if litery[a] in alf and litery[a+1] not in alf
-        print ("litera")
-    a = a + 1
-print("Tekst składa się z", ilslow, "złożonych ze znaków polskiego alfabetu.")
-litery.sort()
-alf = ''.join(litery) #posortowanie alfabetycznie i połączenie w tekst
-print ("Znaki składające się na twój tekst w porządku alfabetycznym to:")
-print (alf)
-a = 0
-b = 0
-while a <= dlugosc-1:
-    print("Znak [", end = "")
-    print (alf[a],end = '')
-    print ("] występuje w tekście ", end = '')
-    b = alf.count(alf[a])
-    print (b, end = '')
-    print (" razy")
-    a = a + b
+while 1 == 1:
+    print ("wpisz tekst do analizy lub wpisz >>zdef<< dla analizy tekstu zdefiniowanego")
+    analiza = input()
+    if analiza == "zdef":
+        analiza = "Tekst zdefiniowany4slowa,sprawdza"
+    analiza = analiza.upper() #zmiana wszystkich liter na wielkie - case-insensitive
+    print ("Analizowany tekst:")
+    print (analiza) #głównie po to, żeby wyświetlić zdefiniowany tekst
+    dlugosc = len (analiza)
+    if dlugosc == 1:
+        print ("Twój tekst składa się z 1 znaku")
+    else:
+        print ("Twój tekst składa się z ", dlugosc, " znaków")
+    a = 0
+    litery = []
+    while a < dlugosc:
+        litery.append(analiza[a])
+        a = a + 1 #dodanie pijedyńczych znaków tekstu do listy litery
+    alf = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q'
+        , 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+    a = 1
+    ilslow = 0
+    while a < dlugosc:
+        if analiza[a-1] in alf:
+            if analiza[a] not in alf:
+                ilslow = ilslow + 1
+        a = a + 1
+    if analiza[dlugosc-1] in alf:
+            ilslow = ilslow + 1
+    print("Tekst składa się z", ilslow, "słów złożonych ze znaków polskiego alfabetu.")
+    litery.sort()
+    alf = ''.join(litery) #posortowanie alfabetycznie i połączenie w tekst
+    print ("Znaki składające się na twój tekst w porządku alfabetycznym to:")
+    print (alf)
+    a = 0
+    b = 0
+    while a <= dlugosc-1:
+        print("Znak [", end = "")
+        print (alf[a],end = '')
+        print ("] występuje w tekście ", end = '')
+        b = alf.count(alf[a])
+        print (b, end = '')
+        print (" razy")
+        a = a + b

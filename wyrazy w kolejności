@@ -1,0 +1,24 @@
+"""5) Napisz program który poda wpisane wyrazy w kolejności alabetycznej"""
+#while 1 == 1:
+#print ("wpisz tekst do analizy lub wpisz >>zdef<< dla analizy tekstu zdefiniowanego")
+#    analiza = input()
+#    if analiza == "zdef":"""
+analiza = "Tekst zdefiniowany4slowa,sprawdza"
+analiza = analiza.upper() #zmiana wszystkich liter na wielkie - case-insensitive
+print ("Analizowany tekst:")
+print (analiza)
+alf = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P',
+    'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+wyrazy = []
+slowo = []
+a=0
+while a < len(analiza):
+    if analiza[a] in alf:
+        slowo.append(analiza[a])
+        a = a +1
+    else:
+        wyr = ''.join(slowo)
+        wyrazy.append(wyr)
+        a = a+1
+print (wyrazy)
+print ("koniec")

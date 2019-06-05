@@ -31,6 +31,35 @@ while 1 == 1:
     if analiza[dlugosc-1] in alf:
             ilslow = ilslow + 1
     print("Tekst składa się z", ilslow, "słów złożonych ze znaków polskiego alfabetu.")
+    wyrazy = []
+    slowo = []
+    g=0
+    while g < dlugosc:
+        if g == dlugosc-1:
+            if analiza[g] in alf:
+                slowo.append(analiza[g])
+                wyr=''.join(slowo)
+                wyrazy.append(wyr)
+                slowo = []
+                g=g+1
+            else:
+                wyr=''.join(slowo)
+                wyrazy.append(wyr)
+                slowo = []
+                g=g+1
+        elif analiza[g] in alf:
+            slowo.append(analiza[g])
+            g=g+1
+        elif analiza[g+1] not in alf:
+            g=g+1
+        else:
+            wyr=''.join(slowo)
+            wyrazy.append(wyr)
+            slowo = []
+            g=g+1
+    wyrazy.sort()
+    print ("Słowa składające się na tekst w kolejności alfabetycznej to:")
+    print (wyrazy)
     litery.sort()
     alf = ''.join(litery) #posortowanie alfabetycznie i połączenie w tekst
     print ("Znaki składające się na twój tekst w porządku alfabetycznym to:")
@@ -45,3 +74,4 @@ while 1 == 1:
         print (b, end = '')
         print (" razy")
         a = a + b
+    print ()
